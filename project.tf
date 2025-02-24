@@ -1,4 +1,4 @@
-module "service-project" {
+module "service_project" {
   source  = "terraform-google-modules/project-factory/google//modules/svpc_service_project"
   version = "~> 18.0"
 
