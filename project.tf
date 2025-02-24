@@ -7,10 +7,6 @@ module "service_project" {
   folder_id            = local.gcp_folder_id
   billing_account      = local.gcp_billing_account_id
 
-  activate_apis = [
-    "compute.googleapis.com",
-  ]
-
   deletion_policy = "DELETE"
 }
 
