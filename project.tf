@@ -6,5 +6,5 @@ module "service_project" {
   folder_id            = local.gcp_folder_id
   billing_account      = local.gcp_billing_account_id
   
-  svpc_host_project_id = data.tfe_outputs.host_vpc_project.values.project_id
+  svpc_host_project_id = local.shared_host_vpc_project_id
 }
