@@ -9,7 +9,7 @@
 #   deletion_policy = "DELETE"
 # }
 
-module "new_service_project" {
+module "service_project" {
   source  = "terraform-google-modules/project-factory/google//modules/svpc_service_project"
 
   name              = "service"
