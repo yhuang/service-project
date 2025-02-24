@@ -1,5 +1,5 @@
 module "service_project" {
-  source  = "terraform-google-modules/project-factory"
+  source  = "terraform-google-modules/project-factory/google"
   version = "~> 18.0"
 
   name                 = "service"
