@@ -1,4 +1,20 @@
 module "service_project" {
+  source  = "terraform-google-modules/project-factory"
+  version = "~> 18.0"
+
+  name                 = "service"
+  random_project_id    = true
+  folder_id            = local.gcp_folder_id
+  billing_account      = local.gcp_billing_account_id
+
+  activate_apis = [
+    "compute.googleapis.com",
+  ]
+
+  deletion_policy = "DELETE"
+}
+
+module "new_service_project" {
   source  = "terraform-google-modules/project-factory/google//modules/svpc_service_project"
   version = "~> 18.0"
 
