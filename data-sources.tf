@@ -9,5 +9,6 @@ data "tfe_outputs" "host_vpc_project" {
 }
 
 data "google_compute_network" "shared_host_vpc" {
-  name = data.tfe_outputs.host_vpc_project.values.shared_host_vpc["name"]
+  name    = data.tfe_outputs.host_vpc_project.values.shared_host_vpc["name"]
+  project = local.shared_host_vpc_project_id
 }
