@@ -22,10 +22,6 @@ module "service_project" {
   shared_vpc         = local.shared_host_vpc_project_id
   shared_vpc_subnets = data.google_compute_network.shared_host_vpc.subnetworks_self_links
 
-  activate_apis = [
-    "compute.googleapis.com",
-  ]
-
   disable_services_on_destroy = false
   deletion_policy             = "DELETE"
 }
