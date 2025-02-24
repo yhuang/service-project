@@ -7,3 +7,7 @@ data "tfe_outputs" "host_vpc_project" {
   organization = var.tfc_organization_name
   workspace    = var.tfc_host_vpc_project_workspace_name
 }
+
+data "google_compute_network" "shared_host_vpc" {
+  name = data.tfe_outputs.host_vpc_project.values.shared_host_vpc["name"]
+}

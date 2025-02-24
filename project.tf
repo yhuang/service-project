@@ -8,6 +8,6 @@ module "service_project" {
   
   svpc_host_project_id = local.shared_host_vpc_project_id
 
-  shared_vpc_subnets = []
+  shared_vpc_subnets = data.google_compute_network.shared_host_vpc.subnetworks_self_links
   grant_network_role = true
 }
