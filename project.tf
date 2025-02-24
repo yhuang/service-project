@@ -6,7 +6,7 @@ module "service_project" {
   folder_id            = local.gcp_folder_id
   billing_account      = local.gcp_billing_account_id
   
-  enable_shared_vpc_service_project = true
-
   svpc_host_project_id = local.shared_host_vpc_project_id
+
+  shared_vpc_subnets = []
 }
