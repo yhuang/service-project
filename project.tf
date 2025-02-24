@@ -1,18 +1,16 @@
-module "service_project" {
-  source  = "terraform-google-modules/project-factory/google"
-  version = "~> 18.0"
+# module "service_project" {
+#   source  = "terraform-google-modules/project-factory/google"
 
-  name                 = "service"
-  random_project_id    = true
-  folder_id            = local.gcp_folder_id
-  billing_account      = local.gcp_billing_account_id
+#   name                 = "service"
+#   random_project_id    = true
+#   folder_id            = local.gcp_folder_id
+#   billing_account      = local.gcp_billing_account_id
 
-  deletion_policy = "DELETE"
-}
+#   deletion_policy = "DELETE"
+# }
 
 module "new_service_project" {
   source  = "terraform-google-modules/project-factory/google//modules/svpc_service_project"
-  version = "~> 18.0"
 
   name              = "service"
   random_project_id = false
